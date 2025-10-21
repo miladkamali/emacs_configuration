@@ -636,12 +636,11 @@ This function is called at the very end of Spacemacs initialization."
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
    '(org-agenda-files
-     '("~/orgs/roam/20221030150326-uid_issues.org"
-       "‍~/orgs/roam/20220402121553-org_mode.org"
-       "~/orgs/roam/20250407105508-qc.org"
-       "~/orgs/roam/20250310065646-cis.org"
-       "~/orgs/roam/20221030150326-uid_issues.org"
-       "~/orgs/roam/20250611175703-trading_project.org"))
+     '("~/orgs/roam/20250714092415-ats.org"
+       "/home/milad/orgs/roam/20221030150326-uid_issues.org"
+       "/home/milad/orgs/roam/20250407105508-qc.org"
+       "/home/milad/orgs/roam/20250310065646-cis.org"
+       "/home/milad/orgs/roam/20250611175703-trading_project.org"))
    '(package-selected-packages
      '(ace-jump-helm-line ace-link aggressive-indent all-the-icons auto-compile
                           auto-highlight-symbol centered-cursor-mode
