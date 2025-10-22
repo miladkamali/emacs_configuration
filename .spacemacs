@@ -604,9 +604,9 @@ before packages are loaded."
                         ("@uid" . ?U)
                         ("@bentoak" . ?B)
                         ;; activities
-                        ("@research" . ?R)
-                        ("@watching" . ?W)
-                        )
+;;                        ("@research" . ?R)
+;;                        ("@watching" . ?W)
+                        ))
         (spacemacs/declare-prefix "o" "own-menu" )
         (spacemacs/set-leader-keys "os" 'org-save-all-org-buffers)
         (spacemacs/set-leader-keys
