@@ -32,7 +32,8 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(yaml
+   '(python
+     yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -604,89 +605,98 @@ before packages are loaded."
                         ("@uid" . ?U)
                         ("@bentoak" . ?B)
                         ;; activities
-;;                        ("@research" . ?R)
-;;                        ("@watching" . ?W)
+                        ("@research" . ?R)
+                        ("@watching" . ?W)
+                        ("@youtube" . ?Y)
                         ))
-        (spacemacs/declare-prefix "o" "own-menu" )
-        (spacemacs/set-leader-keys "os" 'org-save-all-org-buffers)
-        (spacemacs/set-leader-keys
-          "oi" 'helm-org-agenda-files-headings)
+  (setq org-startup-folded 2)
+  (spacemacs/declare-prefix "o" "own-menu" )
+  (spacemacs/set-leader-keys "os" 'org-save-all-org-buffers)
+  (spacemacs/set-leader-keys
+    "oi" 'helm-org-agenda-files-headings)
 
-        (setq org-todo-keywords
-              '((sequence "TODO(t!)" "NEXT(n!)" "DOINGNOW(d!)" "BLOCKED(b!)" "TODELEGATE(g!)" "DELEGATED(D!)" "FOLLOWUP(f!)" "TICKLE(T!)" "|" "CANCELLED(c!)" "DONE(F!)")))
+  (setq org-todo-keywords
+        '((sequence "TODO(t!)" "NEXT(n!)" "DOINGNOW(d!)" "BLOCKED(b!)" "TODELEGATE(g!)" "DELEGATED(D!)" "FOLLOWUP(f!)" "TICKLE(T!)" "|" "CANCELLED(c!)" "DONE(F!)")))
 
-        ;; 2. Put all logs (from states, scheduling, etc.) into a drawer
-        (setq org-log-into-drawer t)
+  ;; 2. Put all logs (from states, scheduling, etc.) into a drawer
+  (setq org-log-into-drawer t)
 
-        ;; 3. (NEW) Log changes to SCHEDULED and DEADLINE timestamps
-        (setq org-log-redeadline t)   ; Log deadline changes
-        (setq org-log-reschedule t) ; Log schedule changes
-        ;; (use-package org-node
-        ;;   :config
-        ;;   (setq org-mem-do-sync-with-org-id t) ; optional
-        ;;   (setq org-mem-watch-dirs (list "~/org")) ; optional
-        ;;   (org-mem-updater-mode)
-        ;;   (org-node-cache-mode))
+  ;; 3. (NEW) Log changes to SCHEDULED and DEADLINE timestamps
+  (setq org-log-redeadline t)   ; Log deadline changes
+  (setq org-log-reschedule t) ; Log schedule changes
+  ;; (use-package org-node
+  ;;   :config
+  ;;   (setq org-mem-do-sync-with-org-id t) ; optional
+  ;;   (setq org-mem-watch-dirs (list "~/org")) ; optional
+  ;;   (org-mem-updater-mode)
+  ;;   (org-node-cache-mode))
 
-        )
+  )
 
 
-  ;; Do not write anything past this comment. This is where Emacs will
-  ;; auto-generate custom variable definitions.
-  (defun dotspacemacs/emacs-custom-settings ()
-    "Emacs custom settings.
+;; Do not write anything past this comment. This is where Emacs will
+;; auto-generate custom variable definitions.
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
 This is an auto-generated function, do not modify its content directly, use
 Emacs customize menu instead.
 This function is called at the very end of Spacemacs initialization."
-    (custom-set-variables
-     ;; custom-set-variables was added by Custom.
-     ;; If you edit it by hand, you could mess it up, so be careful.
-     ;; Your init file should contain only one such instance.
-     ;; If there is more than one, they won't work right.
-     '(org-agenda-files
-       '("~/orgs/roam/20251021201700-uid.org"
-         "/home/milad/orgs/roam/20250720124337-accteck.org"
-         "/home/milad/orgs/roam/20250714092415-ats.org"
-         "/home/milad/orgs/roam/20221030150326-uid_issues.org"
-         "/home/milad/orgs/roam/20250407105508-qc.org"
-         "/home/milad/orgs/roam/20250310065646-cis.org"
-         "/home/milad/orgs/roam/20250611175703-trading_project.org"))
-     '(package-selected-packages
-       '(ace-jump-helm-line ace-link aggressive-indent all-the-icons auto-compile
-                            auto-highlight-symbol centered-cursor-mode
-                            clean-aindent-mode column-enforce-mode define-word
-                            devdocs diminish dired-quick-sort disable-mouse
-                            dotenv-mode drag-stuff dumb-jump elisp-def elisp-demos
-                            elisp-slime-nav emr eval-sexp-fu evil-anzu evil-args
-                            evil-cleverparens evil-collection evil-easymotion
-                            evil-escape evil-evilified-state evil-exchange
-                            evil-goggles evil-iedit-state evil-indent-plus evil-lion
-                            evil-lisp-state evil-matchit evil-mc evil-nerd-commenter
-                            evil-numbers evil-surround evil-textobj-line evil-tutor
-                            evil-unimpaired evil-visual-mark-mode evil-visualstar
-                            expand-region eyebrowse fancy-battery flycheck
-                            golden-ratio google-translate helm-ag helm-comint
-                            helm-descbinds helm-make helm-mode-manager helm-org
-                            helm-projectile helm-purpose helm-swoop helm-themes
-                            helm-xref hide-comnt highlight-indentation
-                            highlight-numbers highlight-parentheses hl-todo
-                            holy-mode hungry-delete hybrid-mode indent-guide info+
-                            inspector link-hint lorem-ipsum macrostep multi-line
-                            nameless open-junk-file org-node org-roam org-superstar
-                            overseer page-break-lines paradox password-generator
-                            pcre2el popwin quickrun rainbow-delimiters restart-emacs
-                            space-doc spaceline spacemacs-purpose-popwin
-                            spacemacs-whitespace-cleanup string-edit-at-point
-                            string-inflection symbol-overlay symon system-packages
-                            term-cursor toc-org treemacs-evil treemacs-icons-dired
-                            treemacs-persp treemacs-projectile undo-fu
-                            undo-fu-session uuidgen vi-tilde-fringe
-                            volatile-highlights vundo wgrep winum writeroom-mode
-                            ws-butler yaml-mode)))
-    (custom-set-faces
-     ;; custom-set-faces was added by Custom.
-     ;; If you edit it by hand, you could mess it up, so be careful.
-     ;; Your init file should contain only one such instance.
-     ;; If there is more than one, they won't work right.
-     '(highlight-parentheses-highlight ((nil (:weight ultra-bold))) t))
-    )
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(org-agenda-files
+     '("~/orgs/roam/20250310065646-cis.org"
+       "~/orgs/roam/20251021201700-uid.org"
+       "~/orgs/roam/20250720124337-accteck.org"
+       "~/orgs/roam/20250714092415-ats.org"
+       "~/orgs/roam/20221030150326-uid_issues.org"
+       "~/orgs/roam/20250407105508-qc.org"
+       "~/orgs/roam/20250611175703-trading_project.org"))
+   '(package-selected-packages
+     '(ace-jump-helm-line ace-link aggressive-indent all-the-icons anaconda-mode
+                          auto-compile auto-highlight-symbol blacken bui
+                          centered-cursor-mode clean-aindent-mode code-cells
+                          column-enforce-mode company-anaconda concurrent ctable
+                          cython-mode dap-mode define-word devdocs diminish
+                          dired-quick-sort disable-mouse dotenv-mode drag-stuff
+                          dumb-jump elisp-def elisp-demos elisp-slime-nav emr epc
+                          eval-sexp-fu evil-anzu evil-args evil-cleverparens
+                          evil-collection evil-easymotion evil-escape
+                          evil-evilified-state evil-exchange evil-goggles
+                          evil-iedit-state evil-indent-plus evil-lion
+                          evil-lisp-state evil-matchit evil-mc evil-nerd-commenter
+                          evil-numbers evil-surround evil-textobj-line evil-tutor
+                          evil-unimpaired evil-visual-mark-mode evil-visualstar
+                          expand-region eyebrowse fancy-battery flycheck ggtags
+                          golden-ratio google-translate helm-ag helm-comint
+                          helm-cscope helm-descbinds helm-make helm-mode-manager
+                          helm-org helm-projectile helm-purpose helm-pydoc
+                          helm-swoop helm-themes helm-xref hide-comnt
+                          highlight-indentation highlight-numbers
+                          highlight-parentheses hl-todo holy-mode hungry-delete
+                          hybrid-mode importmagic indent-guide info+ inspector
+                          link-hint live-py-mode load-env-vars lorem-ipsum
+                          lsp-docker lsp-mode lsp-pyright lsp-treemacs macrostep
+                          multi-line nameless nose open-junk-file org-node
+                          org-roam org-superstar overseer page-break-lines paradox
+                          password-generator pcre2el pet pip-requirements pipenv
+                          pippel poetry popwin py-isort pydoc pyenv-mode pylookup
+                          python-pytest pythonic pyvenv quickrun
+                          rainbow-delimiters reformatter restart-emacs ruff-format
+                          space-doc spaceline spacemacs-purpose-popwin
+                          spacemacs-whitespace-cleanup sphinx-doc
+                          string-edit-at-point string-inflection symbol-overlay
+                          symon system-packages term-cursor toc-org treemacs-evil
+                          treemacs-icons-dired treemacs-persp treemacs-projectile
+                          undo-fu undo-fu-session uuidgen uv vi-tilde-fringe
+                          volatile-highlights vundo wgrep winum writeroom-mode
+                          ws-butler xcscope yaml-mode yapfify)))
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(highlight-parentheses-highlight ((nil (:weight ultra-bold))) t))
+  )
