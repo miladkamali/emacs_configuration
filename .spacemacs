@@ -49,42 +49,46 @@ This function should only modify configuration layer settings."
      ;; lsp
      ;; markdown
      multiple-cursors
-     org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     spell-checking
-     ;; syntax-checking
-     ;; version-control
-     treemacs)
+     (org :variables
+          org-babel-load-languages '((emacs-lisp . t)
+                                     (shell . t)
+                                     (python . t)
+                                     (js . t)))
+   ;; (shell :variables
+   ;;        shell-default-height 30
+   ;;        shell-default-position 'bottom)
+   spell-checking
+   ;; syntax-checking
+   ;; version-control
+   treemacs)
 
 
-   ;; List of additional packages that will be installed without being wrapped
-   ;; in a layer (generally the packages are installed only and should still be
-   ;; loaded using load/require/use-package in the user-config section below in
-   ;; this file). If you need some configuration for these packages, then
-   ;; consider creating a layer. You can also put the configuration in
-   ;; `dotspacemacs/user-config'. To use a local version of a package, use the
-   ;; `:location' property: '(your-package :location "~/path/to/your-package/")
-   ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(
-                                      sqlite3
-                                      )
+  ;; List of additional packages that will be installed without being wrapped
+  ;; in a layer (generally the packages are installed only and should still be
+  ;; loaded using load/require/use-package in the user-config section below in
+  ;; this file). If you need some configuration for these packages, then
+  ;; consider creating a layer. You can also put the configuration in
+  ;; `dotspacemacs/user-config'. To use a local version of a package, use the
+  ;; `:location' property: '(your-package :location "~/path/to/your-package/")
+  ;; Also include the dependencies as they will not be resolved automatically.
+  dotspacemacs-additional-packages '(
+                                     sqlite3
+                                     )
 
-   ;; A list of packages that cannot be updated.
-   dotspacemacs-frozen-packages '()
+  ;; A list of packages that cannot be updated.
+  dotspacemacs-frozen-packages '()
 
-   ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+  ;; A list of packages that will not be installed and loaded.
+  dotspacemacs-excluded-packages '()
 
-   ;; Defines the behaviour of Spacemacs when installing packages.
-   ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
-   ;; `used-only' installs only explicitly used packages and deletes any unused
-   ;; packages as well as their unused dependencies. `used-but-keep-unused'
-   ;; installs only the used packages but won't delete unused ones. `all'
-   ;; installs *all* packages supported by Spacemacs and never uninstalls them.
-   ;; (default is `used-only')
-   dotspacemacs-install-packages 'used-only))
+  ;; Defines the behaviour of Spacemacs when installing packages.
+  ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
+  ;; `used-only' installs only explicitly used packages and deletes any unused
+  ;; packages as well as their unused dependencies. `used-but-keep-unused'
+  ;; installs only the used packages but won't delete unused ones. `all'
+  ;; installs *all* packages supported by Spacemacs and never uninstalls them.
+  ;; (default is `used-only')
+  dotspacemacs-install-packages 'used-only))
 
 (defun dotspacemacs/init ()
   "Initialization:
