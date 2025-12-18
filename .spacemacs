@@ -54,7 +54,29 @@ This function should only modify configuration layer settings."
                                      (shell . t)
                                      (python . t)
                                      (C . t)
-                                     (js . t)))
+                                     (js . t)
+                                     ;; (java . t)       ; Java
+                                     ;; (ruby . t)       ; Ruby
+                                     ;; (R . t)          ; R (Statistical analysis)
+                                     ;; (sql . t)        ; SQL (Database queries)
+                                     ;; (css . t)        ; CSS
+                                     ;; (latex . t)      ; LaTeX
+                                     ;; (makefile . t)   ; Makefiles (very useful for documentation)
+                                     ;; (plantuml . t)   ; UML diagrams (requires plantuml jar)
+                                     ;; (ditaa . t)      ; ASCII art to diagrams (requires ditaa jar)
+                                     ;; (dot . t)        ; Graphviz
+                                     ;; (gnuplot . t)    ; Mathematical plotting
+                                     ;; (haskell . t)
+                                     ;; (clojure . t)
+                                     ;; (scheme . t)
+                                     ;; (lua . t)
+                                     ;; (perl . t)
+                                     ;; (julia . t)      ; Great for scientific computing
+                                     ;; (go . t)         ; Go (Golang)
+                                     ;; (rust . t)       ; Rust (May require installing ob-rust package)
+                                     )
+
+          )
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
