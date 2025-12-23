@@ -50,6 +50,7 @@ This function should only modify configuration layer settings."
      ;; markdown
      multiple-cursors
      (org :variables
+          org-enable-roam-support t
           org-babel-load-languages '((emacs-lisp . t)
                                      (shell . t)
                                      (python . t)
@@ -102,7 +103,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(code-review)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -111,6 +112,7 @@ This function should only modify configuration layer settings."
    ;; installs only the used packages but won't delete unused ones. `all'
    ;; installs *all* packages supported by Spacemacs and never uninstalls them.
    ;; (default is `used-only')
+
    dotspacemacs-install-packages 'used-only))
 
 (defun dotspacemacs/init ()
@@ -263,7 +265,7 @@ It should only modify the values of Spacemacs settings."
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 10.0
+                               :size 16.0
                                :weight normal
                                :width normal)
 
@@ -492,7 +494,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `rg', `ag', `pt', `ack' and `grep'.
    ;; (default '("rg" "ag" "pt" "ack" "grep"))
-   dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
+   ;;   dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
+   dotspacemacs-search-tools '("rg" "ag" "ack" "grep")
 
    ;; The backend used for undo/redo functionality. Possible values are
    ;; `undo-fu', `undo-redo' and `undo-tree' see also `evil-undo-system'.
@@ -615,13 +618,13 @@ before packages are loaded."
                                         ; global-page-break-lines-mode will break the org-roam buffer
     :hook ( org-roam-mode . (lambda () (global-page-break-lines-mode -1)))
     :config
-
     (org-roam-setup)
     (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
     (org-roam-db-autosync-mode)
     ;; If using org-roam-protocol
     ;;(require 'org-roam-protocol)
     )
+  (setq org-roam-database-connector 'sqlite-builtin)
   (setq org-agenda-files '( "~/orgs/roam/20250407105508-qc.org"
                             "~/orgs/roam/20250310065646-cis.org"
                             "~/orgs/roam/20221030150326-uid_issues.org"
@@ -683,8 +686,7 @@ This function is called at the very end of Spacemacs initialization."
    '(org-agenda-files
      '("~/orgs/roam/20250407105508-qc.org"
        "~/orgs/roam/20251105085148-uid_infrastructure.org"
-       "~/orgs/roam/20250310065646-cis.org"
-       "~/orgs/roam/20251021201700-uid.org"
+       "~/orgs/roam/20250310065646-cis.org" "~/orgs/roam/20251021201700-uid.org"
        "~/orgs/roam/20250720124337-accteck.org"
        "~/orgs/roam/20250714092415-ats.org"
        "~/orgs/roam/20221030150326-uid_issues.org"
@@ -697,10 +699,10 @@ This function is called at the very end of Spacemacs initialization."
                           cython-mode dap-mode define-word devdocs diminish
                           dired-quick-sort disable-mouse dotenv-mode drag-stuff
                           dumb-jump elisp-def elisp-demos elisp-slime-nav emr epc
-                          eval-sexp-fu evil-anzu evil-args evil-cleverparens
-                          evil-collection evil-easymotion evil-escape
-                          evil-evilified-state evil-exchange evil-goggles
-                          evil-iedit-state evil-indent-plus evil-lion
+                          esqlite eval-sexp-fu evil-anzu evil-args
+                          evil-cleverparens evil-collection evil-easymotion
+                          evil-escape evil-evilified-state evil-exchange
+                          evil-goggles evil-iedit-state evil-indent-plus evil-lion
                           evil-lisp-state evil-matchit evil-mc evil-nerd-commenter
                           evil-numbers evil-surround evil-textobj-line evil-tutor
                           evil-unimpaired evil-visual-mark-mode evil-visualstar
