@@ -56,6 +56,7 @@ This function should only modify configuration layer settings."
                                      (python . t)
                                      (C . t)
                                      (js . t)
+                                     (gnuplot . t)
                                      ;; (java . t)       ; Java
                                      ;; (ruby . t)       ; Ruby
                                      ;; (R . t)          ; R (Statistical analysis)
