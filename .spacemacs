@@ -46,8 +46,17 @@ This function should only modify configuration layer settings."
      helm
      org-roam
      org-node
+     latex
+     latex-mode
+     ob-go
+     go
+     go-mode
+     rust
+     rust-mode
+     ob-rust
      ;; lsp
-     ;; markdown
+     markdown
+     markdown-mode
      multiple-cursors
      (org :variables
           org-enable-roam-support t
@@ -57,13 +66,12 @@ This function should only modify configuration layer settings."
                                      (C . t)
                                      (js . t)
                                      (gnuplot . t)
-                                     ("json" . json-ts)
                                      (java . t)       ; Java
                                      (ruby . t)       ; Ruby
                                      (R . t)          ; R (Statistical analysis)
                                      (sql . t)        ; SQL (Database queries)
                                      (css . t)        ; CSS
-                                     (latex . t)      ; LaTeX
+                                     ;;(latex . t)      ; LaTeX
                                      (makefile . t)   ; Makefiles (very useful for documentation)
                                      (plantuml . t)   ; UML diagrams (requires plantuml jar)
                                      (ditaa . t)      ; ASCII art to diagrams (requires ditaa jar)
@@ -74,8 +82,8 @@ This function should only modify configuration layer settings."
                                      (lua . t)
                                      (perl . t)
                                      (julia . t)      ; Great for scientific computing
-                                     (go . t)         ; Go (Golang)
-                                     (rust . t)       ; Rust (May require installing ob-rust package)
+                                     ;;(go . t)         ; Go (Golang)
+                                     ;;(rust . t)       ; Rust (May require installing ob-rust package)
                                      )
 
           )
