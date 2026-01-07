@@ -684,15 +684,16 @@ This function is called at the very end of Spacemacs initialization."
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
    '(org-agenda-files
-     '("~/orgs/roam/20241224105440-crypto.org"
-       "~/orgs/roam/20250407105508-qc.org"
-       "~/orgs/roam/20251105085148-uid_infrastructure.org"
-       "~/orgs/roam/20250310065646-cis.org"
-       "~/orgs/roam/20251021201700-uid.org"
-       "~/orgs/roam/20250720124337-accteck.org"
-       "~/orgs/roam/20250714092415-ats.org"
-       "~/orgs/roam/20221030150326-uid_issues.org"
-       "~/orgs/roam/20250611175703-trading_project.org"))
+     '("~/orgs/roam/20251223202633-cursor.org"
+       "/Users/miladkamali/orgs/roam/20241224105440-crypto.org"
+       "/Users/miladkamali/orgs/roam/20250407105508-qc.org"
+       "/Users/miladkamali/orgs/roam/20251105085148-uid_infrastructure.org"
+       "/Users/miladkamali/orgs/roam/20250310065646-cis.org"
+       "/Users/miladkamali/orgs/roam/20251021201700-uid.org"
+       "/Users/miladkamali/orgs/roam/20250720124337-accteck.org"
+       "/Users/miladkamali/orgs/roam/20250714092415-ats.org"
+       "/Users/miladkamali/orgs/roam/20221030150326-uid_issues.org"
+       "/Users/miladkamali/orgs/roam/20250611175703-trading_project.org"))
    '(package-selected-packages
      '(ace-jump-helm-line ace-link aggressive-indent all-the-icons anaconda-mode
                           auto-compile auto-highlight-symbol blacken bui
