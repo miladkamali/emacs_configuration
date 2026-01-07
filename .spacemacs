@@ -46,17 +46,8 @@ This function should only modify configuration layer settings."
      helm
      org-roam
      org-node
-     latex
-     latex-mode
-     ob-go
-     go
-     go-mode
-     rust
-     rust-mode
-     ob-rust
      ;; lsp
-     markdown
-     markdown-mode
+     ;; markdown
      multiple-cursors
      (org :variables
           org-enable-roam-support t
@@ -65,25 +56,25 @@ This function should only modify configuration layer settings."
                                      (python . t)
                                      (C . t)
                                      (js . t)
-                                     (gnuplot . t)
-                                     (java . t)       ; Java
-                                     (ruby . t)       ; Ruby
-                                     (R . t)          ; R (Statistical analysis)
-                                     (sql . t)        ; SQL (Database queries)
-                                     (css . t)        ; CSS
-                                     ;;(latex . t)      ; LaTeX
-                                     (makefile . t)   ; Makefiles (very useful for documentation)
-                                     (plantuml . t)   ; UML diagrams (requires plantuml jar)
-                                     (ditaa . t)      ; ASCII art to diagrams (requires ditaa jar)
-                                     (dot . t)        ; Graphviz
-                                     (haskell . t)
-                                     (clojure . t)
-                                     (scheme . t)
-                                     (lua . t)
-                                     (perl . t)
-                                     (julia . t)      ; Great for scientific computing
-                                     ;;(go . t)         ; Go (Golang)
-                                     ;;(rust . t)       ; Rust (May require installing ob-rust package)
+                                     ;; (java . t)       ; Java
+                                     ;; (ruby . t)       ; Ruby
+                                     ;; (R . t)          ; R (Statistical analysis)
+                                     ;; (sql . t)        ; SQL (Database queries)
+                                     ;; (css . t)        ; CSS
+                                     ;; (latex . t)      ; LaTeX
+                                     ;; (makefile . t)   ; Makefiles (very useful for documentation)
+                                     ;; (plantuml . t)   ; UML diagrams (requires plantuml jar)
+                                     ;; (ditaa . t)      ; ASCII art to diagrams (requires ditaa jar)
+                                     ;; (dot . t)        ; Graphviz
+                                     ;; (gnuplot . t)    ; Mathematical plotting
+                                     ;; (haskell . t)
+                                     ;; (clojure . t)
+                                     ;; (scheme . t)
+                                     ;; (lua . t)
+                                     ;; (perl . t)
+                                     ;; (julia . t)      ; Great for scientific computing
+                                     ;; (go . t)         ; Go (Golang)
+                                     ;; (rust . t)       ; Rust (May require installing ob-rust package)
                                      )
 
           )
@@ -693,9 +684,11 @@ This function is called at the very end of Spacemacs initialization."
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
    '(org-agenda-files
-     '("~/orgs/roam/20250407105508-qc.org"
+     '("~/orgs/roam/20241224105440-crypto.org"
+       "~/orgs/roam/20250407105508-qc.org"
        "~/orgs/roam/20251105085148-uid_infrastructure.org"
-       "~/orgs/roam/20250310065646-cis.org" "~/orgs/roam/20251021201700-uid.org"
+       "~/orgs/roam/20250310065646-cis.org"
+       "~/orgs/roam/20251021201700-uid.org"
        "~/orgs/roam/20250720124337-accteck.org"
        "~/orgs/roam/20250714092415-ats.org"
        "~/orgs/roam/20221030150326-uid_issues.org"
